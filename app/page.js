@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between pt-24">
+    <main className="flex w-full flex-col items-center justify-between pt-24">
       <div className="w-full hidden lg:block"><ProfileHeader/></div>
       <div className="w-full block lg:hidden"><MobileProfileHeader/></div>
       <ProfileNav/>

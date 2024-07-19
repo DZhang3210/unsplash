@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProfileBody = () => {
   return (
-    <div>
+    <div className='w-full h-[2000vh]'>
       
     </div>
   )

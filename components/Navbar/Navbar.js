@@ -49,7 +49,7 @@ const Navbar = () => {
   },[])
   
   return (
-    <nav className='fixed w-full h-[2rem] flex mt-4 px-4 gap-4 items-center z-[100]'>
+    <nav className='fixed w-full h-[2rem] flex mt-4 px-4 gap-4 items-center z-[100] bg-white'>
       <button className=''>
         <Image
           src = "/unsplash-logo.webp"
