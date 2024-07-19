@@ -49,7 +49,7 @@ const Navbar = () => {
   },[])
   
   return (
-    <nav className='fixed w-full h-[2rem] flex mt-4 px-4 gap-4 items-center z-[100] bg-white'>
+    <nav className='fixed w-full h-[2rem] flex pt-10 px-4 pb-10 gap-4 items-center z-[100] bg-white'>
       <button className=''>
         <Image
           src = "/unsplash-logo.webp"
@@ -59,7 +59,7 @@ const Navbar = () => {
         />
       </button>
       <div 
-        className={'relative flex rounded-full grow justify-between border px-3 items-center transition ' + (searchTrigger ? 'bg-white/50' : 'bg-gray-200/50' )}
+        className={'relative flex rounded-full grow justify-between border px-3 items-center transition ' + (searchTrigger ? 'bg-white' : 'bg-gray-200' )}
       >
         <div className = "grow" id = "search-drop">
         <div className='flex grow gap-2 py-2'>

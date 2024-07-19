@@ -4,33 +4,10 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const ProfileNav = () => {
   const [profileNavChosen, setProfileNavChosen] = useState(0)
-  const [isSticky, setIsSticky] = useState(false)
-  const stickyRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        console.log('hello')
-        setIsSticky(entry.intersectionRatio < 1)
-      },
-      { threshold: [1] }
-    )
-
-    if (stickyRef.current) {
-      observer.observe(stickyRef.current)
-    }
-
-    return () => {
-      if (stickyRef.current) {
-        observer.unobserve(stickyRef.current)
-      }
-    }
-  }, [stickyRef])
 
   return (
     <div 
-      ref={stickyRef}
-      className={`sticky top-10 w-full flex flex-col justify-center items-start py-4 px-2 ${isSticky ? 'bg-gray-100 shadow-md' : 'bg-transparent'}`}
+      className='sticky top-16 w-full flex flex-col justify-center items-start py-4 px-2 bg-white z-100'
       id="profile-nav"
     >
       <div className='flex gap-1 justify-start'>
@@ -52,11 +29,6 @@ const ProfileNav = () => {
               </div>
             </div>
           ))
-        }
-        {isSticky && 
-        <div>
-          Sticky
-        </div>
         }
         
       </div>
