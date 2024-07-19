@@ -93,10 +93,10 @@ const ProfileBody = () => {
         </div>
         <div className='w-full flex flex-col mb-80 md:mb-0 md:grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-4  h-[40rem]'>
           {
-            [[<Calendar size ={30}/>,'First upload', 'Upload your first image', 'bg-red-400'],
-              [<Star size ={30}/>, 'First upload', 'Reach 5 featured photos on the editorial feed', 'bg-yellow-400'],
-              [<Eye size ={30}/>, 'Views', 'Reach 100k views', 'bg-blue-400'],
-              [<Download size ={30}/>, 'Downloads', 'Reach 500k downloads', 'bg-green-400'],
+            [[<Calendar size ={30} key ={'index1'}/>,'First upload', 'Upload your first image', 'bg-red-400'],
+              [<Star size ={30} key ={'index2'}/>, 'First upload', 'Reach 5 featured photos on the editorial feed', 'bg-yellow-400'],
+              [<Eye size ={30} key ={'index3'}/>, 'Views', 'Reach 100k views', 'bg-blue-400'],
+              [<Download size ={30} key ={'index4'}/>, 'Downloads', 'Reach 500k downloads', 'bg-green-400'],
             ].map(([logo, title, desc, color], i) =>(
                 <div className='relative border rounded-lg flex flex-col justify-center items-center gap-1 px-3 text-center w-full py-10' key = {i}>
                     <div className={'p-8 rounded-full ' + color}>

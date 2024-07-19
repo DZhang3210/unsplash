@@ -12,10 +12,10 @@ const ProfileNav = () => {
     >
       <div className='flex gap-1 justify-start'>
         {[
-          [<ImageIcon />, 'Photos'],
-          [<Heart />, 'Likes'],
-          [<Folder />, 'Collections'],
-          [<BarChart />, 'Stats']].map(([logo, title], i) => (
+          [<ImageIcon key ={'index1'}/>, 'Photos'],
+          [<Heart key ={'index2'}/>, 'Likes'],
+          [<Folder key ={'index3'}/>, 'Collections'],
+          [<BarChart key ={'index4'}/>, 'Stats']].map(([logo, title], i) => (
             <div
               className={'ml-4 py-2 flex gap-1 border-b-[1px] transition cursor-pointer items-center text-gray-500 hover:text-black ' + (profileNavChosen === i ? 'border-black' : '')}
               onClick={() => { setProfileNavChosen(i) }}
