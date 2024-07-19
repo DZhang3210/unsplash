@@ -22,7 +22,7 @@ const MenuDrop = () => {
   },[])
   return (
     <div 
-        className='absolute translate-y-5 top-full right-0 flex flex-col w-[40rem] gap-5 border shadow bg-white pt-8 px-5 pointer-events-auto'
+        className='absolute top-[200%] right-0 flex flex-col w-[40rem] gap-5 border shadow bg-white pt-8 px-5'
     >
         <div className='grid grid-cols-12'>
             <div>
@@ -84,9 +84,9 @@ const MenuDrop = () => {
                     ))
                 }
             </div>
-            <div className='relative'>
+            <div>
             <button 
-                className='text-sm text-gray-400 flex transition items-center hover:text-black'
+                className='relative text-sm text-gray-400 flex transition items-center hover:text-black'
                 onClick = {
                     () => {setLanguageDrop(prev => !prev)}
                 }

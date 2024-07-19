@@ -11,7 +11,7 @@ const SearchDrop = () => {
       <div className='flex gap-2'>
         {
             ["1", "2", "3"].map((item, i) => (
-                <div className='px-8 py-1 rounded-md bg-gray-200 transition hover:bg-gray-300 cursor-pointer' key = {i}>
+                <div className='px-4 py-1 rounded-md bg-gray-200 transition hover:bg-gray-300 cursor-pointer' key = {i}>
                     {item}
                 </div>
             ))
@@ -23,7 +23,7 @@ const SearchDrop = () => {
       <div className='flex gap-2'>
         {
             ["1", "2", "3"].map((item, i) => (
-                <div className='px-8 py-1 rounded-md bg-gray-200' key = {i}>
+                <div className='px-4 py-1 rounded-md bg-gray-200' key = {i}>
                     {item}
                 </div>
             ))
@@ -35,7 +35,7 @@ const SearchDrop = () => {
       <div className='flex gap-2'>
         {
             ["1", "2", "3"].map((item, i) => (
-                <div className='px-8 py-1 rounded-md bg-gray-200' key = {i}>
+                <div className='px-4 py-1 rounded-md bg-gray-200' key = {i}>
                     {item}
                 </div>
             ))

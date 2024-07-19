@@ -12,7 +12,9 @@ const ProfileDrop = () => {
                 </div>
             ))
         }
-
+        <div className='flex justify-center items-center rounded-lg border border-gray-400 hover:border-black transition cursor-pointer shadow-md mx-2 py-1 my-1 md:hidden'>
+            Submit an image
+        </div>
         <hr className='my-2'/>
 
         <div className='cursor-pointer transition hover:bg-gray-100 h-full w-full px-2 py-2'>

@@ -9,6 +9,7 @@ import ProfileDrop from './ProfileDrop'
 import BellDrop from './BellDrop'
 import SearchDrop from './SearchDrop'
 import ImageDrop from './ImageDrop'
+import MobileMenuDrop from './MobileMenuDrop'
 
 const Navbar = () => {
   const [menuTrigger, setMenuTrigger] = useState(false)
@@ -48,7 +49,7 @@ const Navbar = () => {
   },[])
   
   return (
-    <div className='fixed w-full h-[2rem] flex mt-4 px-4 gap-4 items-center'>
+    <nav className='fixed w-full h-[2rem] flex mt-4 px-4 gap-4 items-center z-[100]'>
       <button className=''>
         <Image
           src = "/unsplash-logo.webp"
@@ -59,8 +60,8 @@ const Navbar = () => {
       </button>
       <div 
         className={'relative flex rounded-full grow justify-between border px-3 items-center transition ' + (searchTrigger ? 'bg-white/50' : 'bg-gray-200/50' )}
-        id = "search-drop"
       >
+        <div className = "grow" id = "search-drop">
         <div className='flex grow gap-2 py-2'>
           <Search
             className='cursor-pointer'
@@ -69,29 +70,41 @@ const Navbar = () => {
           <input
             type = "text"
             placeholder = "Search photos and illustrations"
-            className='bg-transparent outline-none grow placeholder:text-sm'
+            className='bg-transparent outline-none w-full placeholder:text-sm hidden xl:block'
+            onFocus = {()=>{ setSearchTrigger(true)}}
+          />
+          <input
+            type = "text"
+            placeholder = "Search Images"
+            className='bg-transparent outline-none w-full placeholder:text-sm block xl:hidden'
             onFocus = {()=>{ setSearchTrigger(true)}}
           />
         </div>
-        <ScanBarcode
-          onClick = {()=> {setImageTrigger(prev=>!prev)}}
-          className='cursor-pointer'
-        />
-        {
-          imageTrigger && <ImageDrop/>
-        }      
         {
           searchTrigger && <SearchDrop/>
-        }
+        } 
+        </div>
+        <div
+          className='hidden xl:block'
+          id = "image-drop"
+        >
+          <ScanBarcode
+            onClick = {()=> {setImageTrigger(prev=>!prev)}}
+            className='cursor-pointer'
+          />
+          {
+            imageTrigger && <ImageDrop/>
+          } 
+        </div>     
       </div>
-      <button className='text-sm transition text-gray-500 hover:text-black'>
+      <button className='text-sm transition text-gray-500 hover:text-black hidden lg:block'>
         Get Unsplash+
       </button>
-      <button className='border rounded-lg shadow-md py-1 px-1 text-sm text-gray-600 hover:border-gray-700 transition hover:text-black'>
+      <button className='border rounded-lg shadow-md py-1 px-1 text-sm text-gray-600 hover:border-gray-700 transition hover:text-black hidden md:block'>
         Submit an image
       </button>
       <div 
-        className='relative'
+        className='relative hidden md:block'
         id = "bell-drop"
       >
         <Bell
@@ -131,10 +144,15 @@ const Navbar = () => {
           className='cursor-pointer'
         />
         <AnimatePresence>
-          {menuTrigger && <FadeIn><MenuDrop/></FadeIn>}
+          {/* {menuTrigger && <FadeIn><MenuDrop/></FadeIn>} */}
+          {menuTrigger && 
+          <FadeIn>
+            <span className='hidden lg:inline'><MenuDrop/></span>
+            <span className='inline lg:hidden'><MobileMenuDrop/></span>
+          </FadeIn>}
         </AnimatePresence>
       </div>
-    </div>
+    </nav>
   )
 }
 
